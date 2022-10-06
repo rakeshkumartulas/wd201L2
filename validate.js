@@ -28,8 +28,9 @@ const nameCell = `<td class='border px-4 py-2'>${entry.FullName}</td>`
 const emailCell = `<td class='border px-4 py-2'>${entry.email}</td>`
 const passwordCell = `<td class='border px-4 py-2'>${entry.password}</td>`
 const dobCell = `<td class='border px-4 py-2'>${entry.dob}</td>`
+const GenCell = `<td class='border px-4 py-2'>${entry.Gen}</td>`
 const acceptTermsCell = `<td class='border px-4 py-2'>${entry.acceptTerms}</td>`
-const row = `<tr>${nameCell} ${emailCell} ${passwordCell} ${dobCell} ${acceptTermsCell}</tr>`
+const row = `<tr>${nameCell} ${emailCell} ${passwordCell} ${dobCell} ${GenCell} ${acceptTermsCell}</tr>`
 return row
 
 }).join('\n')
@@ -39,6 +40,7 @@ const table =` <table class='table-auto w-full'>
     <th class='px-4 py-2 '>Email </th>
     <th class='px-4 py-2 '>Password </th>
     <th class='px-4 py-2 '>Dob </th>
+    <th class='px-4 py-2 '>Gender </th>
     <th class='px-4 py-2 '>Accepted terms? </th>
     </tr>${tbleEntries}
 </table>`
@@ -48,10 +50,11 @@ details.innerHTML=table
 
 const saveUserForm = (event)=>{
 event.preventDefault();
-const FullName = document.getElementById('name').value
-const email = document.getElementById('email').value
-const password = document.getElementById('password').value
-const dob = document.getElementById('dob').value
+const FullName = document.getElementById('uname').value
+const email = document.getElementById('uemail').value
+const password = document.getElementById('upassword').value
+const dob = document.getElementById('udob').value
+const Gen = document.getElementById('uGend').value
 const acceptTerms = document.getElementById('acceptTerms').checked
 var currentYear = new Date().getFullYear();
 var birthYear = dob.split("-");
@@ -70,6 +73,7 @@ if(age < 18 || age > 55){
         email,
         password,
         dob,
+        Gen,
         acceptTerms
      }
      userEntries.push(entry);
