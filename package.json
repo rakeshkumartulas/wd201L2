@@ -1,0 +1,16 @@
+{
+  "name": "wd201l2-test",
+  "version": "1.0.0",
+  "description": "\"this is for the testing\"",
+  "main": "index.js",
+  "scripts": {
+    "start":"node index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Mr.Rakesh Kumar <rakesh.kumar@tulas.edu.in>",
+  "license": "ISC",
+  "dependencies": {
+    "eslint": "^8.24.0",
+    "minimist": "^1.2.6"
+  }
+}
